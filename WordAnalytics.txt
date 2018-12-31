@@ -1,0 +1,38 @@
+# This program converts input alphabets into integers assuming a,b,c and d .. is equal to 1,2,3 and 4 ..
+# 30/12/2018
+
+import string
+import array as arr
+
+number_list = list(range(1, 27))
+print(number_list)
+alphabet_list = list(string.ascii_lowercase)
+print(alphabet_list)
+a = arr.array('i', [])
+f1 = open("adjectives.txt", "r")
+
+for w in f1:
+    word = w
+    Sum = sum(a)
+    a = []
+    f = open("WordAnalytics.txt", "a+")
+    f.write("%s = %d \n" % (word, Sum))
+    # print("%s = %d" % (word, Sum))
+    f.close()
+    for x in word:
+        for y in alphabet_list:
+            if x != "\n":
+                z = alphabet_list.index(x)+1
+                a.append(z)
+            else:
+                break
+            break
+f1.close()
+
+
+
+
+
+
+
+
