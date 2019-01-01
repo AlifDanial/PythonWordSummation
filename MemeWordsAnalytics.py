@@ -2,11 +2,11 @@
 # 30/12/2018
 
 import string
-import array as arr
 
 number_list = list(range(1, 27))
 alphabet_list = list(string.ascii_lowercase)
-a = arr.array('i', [])
+a = list()
+b = list()
 '''for x in number_list:
     print("%d : %c" % (x, alphabet_list[x-1]))'''
 for x in number_list:
@@ -22,8 +22,11 @@ word = word.replace(" ", "")
 for x in word:
     for y in alphabet_list:
         z = alphabet_list.index(x)+1
+        n = alphabet_list[z-1]
+        b.append(n)
         a.append(z)
         break
+print(b)
 print(a)
 Sum = sum(a)
 print("%s = %d" % (word, Sum))
